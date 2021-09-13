@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<img src="{{ user.image_url }}" width='150px' height='150px'>
+<h3>Username: {{ user.username }}</h3>
+<h6>E-Mail: {{ user.email }}</h6>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %} 
+<div class="container">
+    <form action="{% url 'updatePost' post.id %}" method="POST" id="updatePostForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="title" placeholder="Title" value = "{{post.title}}">
+        </div>
+        <div class="form-group">
+            <textarea name="content" form="updatePostForm" placeholder="Content" value = "{{post.content}}"></textarea>
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+    </form>
+</div>
+{% endblock content %}
