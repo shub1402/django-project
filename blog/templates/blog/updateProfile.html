@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h2>Update Profile</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'updateProfile' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="username" placeholder="Username" value = "{{user.username}}">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email Address" value = "{{user.email}}">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="url" name="image_url" placeholder="Profile Picture URL" value = "{{user.image_url}}">
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+    </form>
+    <div>
+        <br>
+        <a href="{% url 'changePassword' %}"><input class="btn btn-primary" type="submit" value="Change Password"></a>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<h3>{{post.title}}</h3>
+<p>
+    {{post.content}}
+</p>
+{% if request.user == post.posted_by %}
+    <div class="article-metadata">
+    <a class="mr-2" href="{% url 'updatePost' post.id %}">Update Post</a>
+   </div>
+   <div class="article-metadata">
+    <a class="mr-2" href="{% url 'disablePost' post.id %}">Disable Post</a>
+   </div>
+{% endif %}
+
+{% endblock content %}
