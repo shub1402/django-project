@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_3qk&7!+p8xfw+7^w!1-cgxn8)j^w&#d3(7cc1s2o^k)=pl*7u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://shubdjangoblog.herokuapp.com/']
+ALLOWED_HOSTS = ['shubdjangoblog.herokuapp.com']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_heroku',
 ]
 
 MIDDLEWARE = [
